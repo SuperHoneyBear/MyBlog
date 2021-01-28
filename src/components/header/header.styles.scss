@@ -1,0 +1,58 @@
+@mixin button {
+  text-align: center;
+  width: 120px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: large;
+  font-weight: bold;
+  margin: 0 10px;
+  border-radius: 15px;
+  border: 1px solid #575756;
+  transition: all 250ms ease-in-out;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  &:hover {
+    transform: translateY(-0.1em);
+    outline: 0;
+    border: 1px solid transparent;
+    border-bottom: 1px solid #395263;
+    border-radius: 10;
+    background-position: 100% center;
+    box-shadow: 0 0.5em 0.5em -0.4em #99ddff;
+  }
+}
+.header {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  background-color: #e5edf134;
+  .nav-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .logo-container {
+      .logo {
+        transform: scaleX(-1);
+        height: 100%;
+        width: 70px;
+      }
+    }
+    .menu {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .menu-option {
+        @include button();
+      }
+    }
+  }
+
+  .login {
+    @include button();
+  }
+}
